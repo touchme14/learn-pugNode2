@@ -62,4 +62,4 @@ block content
             a(href=`/gigs/update/${list.id}`) UPDATE
             form(action=`/gigs/delete/${list.id}`, method="post", style="display: inline;")
               button.delete(type="submit" onclick="return confirm('Yakin ingin menghapus?')") DELETE
-  ------------------------------------------------------------------------
+              
