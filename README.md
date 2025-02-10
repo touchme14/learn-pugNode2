@@ -32,34 +32,28 @@ router.get('/', async (req, res) => {
 extends layouts/main
 
 block content
-  h1 Daftar Data
+    h1 Daftar Data  // Your title
 
-  // Search Form
-  form(action="/gigs", method="get")
-    input(type="text", name="name", placeholder="Cari Nama", value=(searchTerm ? searchTerm : ''))
-    button(type="submit") Cari
+    // Search Form
+    form(action="/gigs", method="get")  // Action goes to the main route
+        input(type="text", name="name", placeholder="Cari Nama", value=(searchTerm ? searchTerm : ''))
+        button(type="submit") Cari
 
-  a(href="/gigs/add") +Tambah Data Baru
+    // The rest of your table code (unchanged)
+    table
+        // ... (table header)
+        tbody
+            each list in lists
+                tr
+                    td #{list.no} // Assuming you have a 'no' field
+                    td #{list.name}
+                    td #{list.umur}
+                    td #{list.negara}
+                    td #{list.kota}
+                    td.actions
+                        a(href=`/gigs/update/${list.id}`) UPDATE
+                        form(action=`/gigs/delete/${list.id}`, method="post", style="display: inline;")
+                            button.delete(type="submit" onclick="return confirm('Yakin ingin menghapus?')") DELETE
 
-  table
-    thead
-      tr
-        th No.
-        th Nama
-        th Umur
-        th Negara
-        th Kota
-        th Aksi
-    tbody
-      each list in lists
-        tr
-          td #{list.id}
-          td #{list.name}
-          td #{list.age}
-          td #{list.country}
-          td #{list.city}
-          td.actions
-            a(href=`/gigs/update/${list.id}`) UPDATE
-            form(action=`/gigs/delete/${list.id}`, method="post", style="display: inline;")
-              button.delete(type="submit" onclick="return confirm('Yakin ingin menghapus?')") DELETE
-              
+    // Add New Data link (unchanged)
+    a(href="/gigs/add") +Tambah Data Baru
