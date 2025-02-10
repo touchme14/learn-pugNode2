@@ -1,0 +1,29 @@
+extends layouts/main
+
+block content
+  h1 Update Data
+
+  form(method="POST" action="/gigs/update/#{data.id}")
+    label(for="name") Nama:
+    br
+    input(type="text" id="name" name="name" value=data.name required)
+    br
+    br
+    label(for="age") Umur:
+    br
+    input(type="text" id="age" name="age" value=data.age required)
+    br
+    br
+    label(for="country") Negara:
+    br
+    input(type="text" id="country" name="country" value=data.country required)
+    br
+    br
+    label(for="city") Kota:
+    br
+    input(type="text" id="city" name="city" value=data.city required)
+    br
+    br
+    button(type="submit") Simpan
+
+  a(href="/gigs") Kembali ke Daftar

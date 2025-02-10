@@ -1,0 +1,125 @@
+body {
+    background-color: #000;
+    color: #e0e0e0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    flex: 1;
+}
+
+h1 { /* Style the main heading */
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form { /* Style the search form */
+    display: flex;
+    margin-bottom: 20px; /* Add some space below the form */
+}
+
+input[type="text"] {
+    flex-grow: 1; /* Make the input field expand to fill available space */
+    margin-right: 10px; /* Add some space between input and button */
+}
+
+button { /* Style the search button */
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #43a047;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+thead th {
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #1a1a1a;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #222;
+}
+
+a {
+    color: #4caf50;
+    text-decoration: none;
+    margin-right: 10px; /* Space between update and delete links/buttons */
+}
+
+a:hover {
+    color: #43a047;
+}
+
+/* Style for the delete button (override default button styles) */
+button.delete {  /* Use a more specific selector */
+    background-color: #d32f2f;
+    border: none;
+    color: #fff;
+    padding: 5px 10px; /* Smaller padding */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: #c62828;
+}
+
+
+/* Style for form elements (general) */
+label {
+    color: #e0e0e0;
+    display: block; /* Make labels stack on top of inputs */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%; /* Make input fields take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-bottom: 10px; /* Space between form elements */
+}
+
+/* Style for the container of update and delete actions */
+.actions {
+    display: flex;
+    gap: 5px; 
+    align-items: center;
+}
